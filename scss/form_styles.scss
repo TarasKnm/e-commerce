@@ -17,9 +17,9 @@
     background: none;
     border-bottom: 2px solid black;
     cursor: pointer;
-    &:focus {
-        background-color: #dffbd6;
-        outline: none;
+    &:hover {
+      background-color: #B0C4DE;
+      outline: none; 
     }
 }
 $font: "Sora";
@@ -37,8 +37,8 @@ body {
   letter-spacing: 2px;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #8BC6EC;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-color: #FCF6F5FF;
+
 }
 #back {
   float:right
@@ -97,7 +97,7 @@ input[type=text],input[type=password],input[type=email] {
 button {
   display: inline-block;
   color: white;
-  background-color: #7c9473;
+  background-color: #002D62;
   font-size: 20px;
   text-transform: uppercase;
   padding: 10px 0 5px;

@@ -1,3 +1,4 @@
+
 * {
   padding: 0;
   margin: 0;
@@ -6,9 +7,10 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Bookman Old Style", serif;
+  font-family: "Sora", serif;
   letter-spacing: 2px;
-  background-image: "backgroud.jpg";
+  background-color: #FCF6F5FF;
+
 }
 .clearfix {
   &::after {
@@ -17,7 +19,7 @@ body {
     clear: both;
   }
 }
-.area {
+.nav_bar {
   margin: auto;
   width: 80vw;
 }
@@ -29,6 +31,7 @@ header {
     overflow: hidden;
     position: fixed;
     top: 0;
+    background-color: #002D62;
     ul {
       float: right;
       li {
@@ -46,16 +49,10 @@ header {
   }
 }
 a.active {
-  color: white;
-  background-color: #4f6647;
   cursor: pointer;
 }
 a {
-  &:hover {
-    color: white;
-    background-color: #4f6647;
     cursor: pointer;
-  }
 }
 .homebtn {
   display: inline-block;

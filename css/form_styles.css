@@ -1,5 +1,11 @@
-
-
+/*@media screen and (max-width: 720px) {*/
+/*    .header-container{width: 80vw;}*/
+/*    main{width: 80vw;}*/
+/*}*/
+/*a{font-size: 18px;}*/
+/*@media screen and (max-height: 480px) and (min-height: 200px) {*/
+/*    input{font-size: 16px;}*/
+/*}*/
 input[type=text], input[type=password], input[type=email] {
   font-size: 18px;
   width: 100%;
@@ -11,8 +17,8 @@ input[type=text], input[type=password], input[type=email] {
   background: none;
   border-bottom: 2px solid black;
   cursor: pointer; }
-  input:focus[type=text], input:focus[type=password], input:focus[type=email] {
-    background-color: #dffbd6;
+  input:hover[type=text], input:hover[type=password], input:hover[type=email] {
+    background-color: #B0C4DE;
     outline: none; }
 
 * {
@@ -28,8 +34,7 @@ body {
   letter-spacing: 2px;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-image: url("../background.jpg"); */
-}
+  background-color: #FCF6F5FF; }
 
 #back {
   float: right; }
@@ -83,7 +88,7 @@ main {
 button {
   display: inline-block;
   color: white;
-  background-color: #7c9473;
+  background-color: #002D62;
   font-size: 20px;
   text-transform: uppercase;
   padding: 10px 0 5px;
