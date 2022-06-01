@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\form_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+    <title>E-commerce</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div>
+                    <h1><a href="home.html">E-COMMERCE</a></h1>
+                </div>
+                <div>
+                    <h2>The best e-commerse</h2>
+                </div>
+            </div>
+            <a href="#" id="back" onclick="history.back();return false;">Go back</a>
+
+        </div>
+    </header>
+    <main>
+        <div class="center">
+            <h3>Sign in</h3>
+            <input type="text" class="font" placeholder="Username or email" name="email" id="email" required>
+            <input type="password" class="font" placeholder="Password" name="psw" id="psw" required>
+            <div class="inline">
+                <p class="font">Don't have an account?</p>
+                <a class="button" href="sign-up.html">Sign up</a>
+            </div>
+            <button type="submit" class="font" onclick="location.href='home.html'">Continue</button>
+        </div>
+    </main>
+</body>
+
+</html>
