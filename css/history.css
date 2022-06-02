@@ -8,7 +8,7 @@
   display: flex;
   margin-top: 2em; }
   .product-text img {
-    width: 250px; }
+    width: fit-content; }
 
 .decription {
   padding: 5em; }
