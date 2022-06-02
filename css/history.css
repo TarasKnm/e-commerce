@@ -1,0 +1,14 @@
+.list-of-products {
+  margin: 10em; }
+
+.product {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+
+.product-text {
+  display: flex;
+  margin-top: 2em; }
+  .product-text img {
+    width: 250px; }
+
+.decription {
+  padding: 5em; }

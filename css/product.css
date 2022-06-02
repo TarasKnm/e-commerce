@@ -1,0 +1,87 @@
+.product-image {
+  width: auto;
+  display: flex; }
+
+.container {
+  display: flex;
+  height: 70vh;
+  margin: 10em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.product-image {
+  width: 60%; }
+  .product-image img {
+    width: 100%; }
+
+.details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  .details .description {
+    height: 80%;
+    padding: 5em; }
+  .details .button {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+/* General button style */
+.btn {
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 60px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/* Pseudo elements for icons */
+.btn:before {
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased; }
+
+/* Icon separator */
+.btn-sep {
+  padding: 25px 60px 25px 60px; }
+
+.btn-sep:before {
+  background: rgba(0, 0, 0, 0.15); }
+
+.btn-4 {
+  background: #34495e;
+  color: #fff; }
+
+.btn-4:hover {
+  background: #2c3e50; }
+
+.btn-4:active {
+  background: #2c3e50;
+  top: 2px; }
+
+.btn-4:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%; }
