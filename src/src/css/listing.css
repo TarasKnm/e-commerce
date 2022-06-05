@@ -1,4 +1,4 @@
-.list-of-products {
+.block {
   margin: 10em;
 }
 
@@ -9,5 +9,13 @@
   display: flex;
   margin-top: 2em; }
 
-.decription {
-  padding: 5em; }
+.description-listing {
+  padding: 5em;
+}
+.description-listing p {
+  margin-top: 4px;
+}
+
+.header {
+  font-size: 24px;
+}
