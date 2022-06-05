@@ -3,7 +3,7 @@ import UserItem from "../components/UserItem";
 import '../css/listing.css'
 import API from "../API";
 
-const Users = (props) => {
+const Users = () => {
     const jwt = localStorage.jwt
     const [users, setUsers] = useState([])
     useEffect(() => {
