@@ -4,10 +4,8 @@
   "description": "��#\u0000 \u0000e\u0000-\u0000c\u0000o\u0000m\u0000m\u0000e\u0000r\u0000c\u0000e\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "scripts": {
-    "sass": "node-sass -w scss/ -o css/ --recursive"
+    "sass": "node-sass -w scss/ -o css/ --recursive",
+    "lint": "eslint ./src/**.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +19,9 @@
   "homepage": "https://github.com/TarasKnm/e-commerce#readme",
   "dependencies": {
     "node-sass": "^7.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-plugin-react": "^7.30.0"
   }
 }
