@@ -49,16 +49,19 @@ const LoginForm = () => {
                 onChange={e => setPassword(() => e.target.value)}
             />
             <div className="inline">
-                <p className="font">Don't have an account?</p>
-                <a className="button" href={"/register"}>Sign up</a>
+                <p>Don't have an account?</p>
+                <a className="underline" href={"/register"}>Sign up</a>
             </div>
-            <button
-                type="submit"
-                className="font"
-                onClick={handleSubmit}
-            >
-                Continue
-            </button>
+            <div className="col text-center">
+                <button
+                    type="submit"
+                    className="text-center rounded-pill"
+                    onClick={handleSubmit}
+                >
+                    Continue
+                </button>
+            </div>
+
 
         </div>
     )

@@ -36,7 +36,7 @@ const RegisterForm = () => {
 
     return (
         <div className="center">
-            <h3>Create an account</h3>
+            <h2 className="header-center-h2">Create an account</h2>
 
             <input
                 type="text"
@@ -99,12 +99,14 @@ const RegisterForm = () => {
 
             <div className="inline">
                 <p>Already have an account?</p>
-                <a href="sign-in.html">Sign in</a>
+                <a className="underline" href="/login">Sign in</a>
             </div>
+            <div className="col text-center">
             <button
                 type="submit"
-                className="font"
+                className="justify-content-center rounded-pill"
                 onClick={handleSubmit}>Sign Up</button>
+            </div>
         </div>
     )
 };

@@ -45,7 +45,7 @@ const ProfileForm = () => {
                 <img src={Product} alt="product1"/>
                 <div className="information">
                     <div className="row">
-                        <div className="description">Email:</div>
+                        <div className="description text-center">Email:</div>
                         <input
                             placeholder="email"
                             className="field"
@@ -54,7 +54,7 @@ const ProfileForm = () => {
                         />
                     </div>
                     <div className="row">
-                        <div className="description">First name:</div>
+                        <div className="description text-center">First name:</div>
                         <input
                             placeholder="Firstname"
                             className="field"
@@ -63,7 +63,7 @@ const ProfileForm = () => {
                         />
                     </div>
                     <div className="row">
-                        <div className="description">Last name:</div>
+                        <div className="description text-center">Last name:</div>
                         <input
                             placeholder="Lastname"
                             className="field"
@@ -72,7 +72,7 @@ const ProfileForm = () => {
                         />
                     </div>
                     <div className="row">
-                        <div className="description">Username:</div>
+                        <div className="description text-center">Username:</div>
                         <input
                             placeholder="Username"
                             className="field"
@@ -81,7 +81,7 @@ const ProfileForm = () => {
                         />
                     </div>
                     <div className="row">
-                        <div className="description">Phone number:</div>
+                        <div className="description text-center">Phone number:</div>
                         <input
                             placeholder="Phone number"
                             className="field"

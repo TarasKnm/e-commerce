@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import About from "./pages/About";
 import Login from "./pages/Login";
 import Navigation from "./components/Navigation";
 import Register from "./pages/Register";
 import Users from "./pages/Users";
 import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import History from "./pages/History";
+import ProductForm from "./components/ProductForm";
 
 function App() {
     return (
@@ -14,15 +16,16 @@ function App() {
             <Navigation/>
             <Router>
                 <Routes>
-                    <Route path="/about" element={<About/>}/>
+                    <Route index element={<Home />} />
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/users" element={<Users/>}/>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/history" element={<History/>}/>
+                    <Route path="/product/:id" element={<ProductForm />}/>
                 </Routes>
-
             </Router>
-
         </div>
     );
 }

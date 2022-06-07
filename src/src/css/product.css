@@ -2,7 +2,7 @@
   width: auto;
   display: flex; }
 
-.container {
+.container-product {
   display: flex;
   height: 70vh;
   margin: 10em;
@@ -20,13 +20,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
   .details .description {
     height: 80%;
-    padding: 5em; }
-  .details .button {
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-
+    padding: 2em; }
 /* General button style */
 .btn {
   border: none;

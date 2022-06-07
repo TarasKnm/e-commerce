@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import '../css/styles.css'
+
 
 const Navigation = () => {
     const jwt = localStorage.jwt
@@ -11,18 +11,18 @@ const Navigation = () => {
                 <h2>The best e-commerce</h2>
             </label>
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="history">History</a></li>
+                <li><a className="text-decoration-none" href="/home">Home</a></li>
+                <li><a className="text-decoration-none" href="/history">History</a></li>
                 {
                     !jwt ?
-                        <li><a href="login">Sign In</a></li> : null
+                        <li><a className="text-decoration-none" href="/login">Sign In</a></li> : null
                 }
                 {
-                    isSuperUser ?
-                        <li><a href="users">Users</a></li> : null
+                    isSuperUser === 'True' ?
+                        <li><a className="text-decoration-none" href="/users">Users</a></li> : null
 
                 }
-                <li><a href="profile">Profile</a></li>
+                <li><a className="text-decoration-none" href="/profile">Profile</a></li>
             </ul>
         </nav>
     );
