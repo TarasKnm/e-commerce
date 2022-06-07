@@ -9,7 +9,7 @@ const ProductForm = () => {
     const {id} = useParams()
     const [product, setProduct] = useState('')
     const [image, setImage] = useState(undefined)
-    const [modalActive,setModalActive] = useState(false)
+    const [modalActive, setModalActive] = useState(false)
     const images = require.context('../images', true)
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const ProductForm = () => {
     }, [])
 
     const toggleModal = () => {
-      setModalActive(!modalActive)
+        setModalActive(!modalActive)
     }
 
     return (<div>
@@ -33,9 +33,9 @@ const ProductForm = () => {
             </div>
             <div className="details">
                 <div className="description limit" id="w74">
-                    <h6>Home/T-shirt</h6>
-                    <h3 className="py-4">{product.name}</h3>
-                    <h2>{product.price}$</h2>
+                    <h6>Home/Asuka</h6>
+                    {product?.name && product.name ? <h3 className="py-4">{product.name}</h3> : <h3>Test</h3>}
+                    {product?.price && <h2>{product.price}$</h2>}
                     <h4 className="mt-5 mb-5">Product Details</h4>
                     <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi aperiam asperiores aspernatur atque ducimus est harum magni maiores nam natus non officia optio provident quam qui quis, repellendus soluta. </span>
                 </div>

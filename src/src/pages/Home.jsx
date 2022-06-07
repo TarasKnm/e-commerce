@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import '../css/grid.css'
 import HomeForm from "../components/HomeForm";
 
