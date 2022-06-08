@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import API from "../API";
+import API from "../../API";
 
 const RegisterForm = () => {
     const [user, setUser] = useState({
@@ -24,6 +24,14 @@ const RegisterForm = () => {
             username: user.username,
             phone: user.phone
         })
+        if (user.password !== user.repeat_password) {
+            alert("Passwords are different")
+            return
+        }
+        if (!user.password || !user.firstname || !user.lastname || !user.username || !user.email || !user.password || !user.repeat_password || !user.phone) {
+            alert("Please fill all columns")
+            return;
+        }
         API.sendRegistrationRequest(object)
             .then(response => {
                 alert("Successful registration.");
@@ -63,7 +71,7 @@ const RegisterForm = () => {
                 name="username"
                 id="username"
                 onChange={e => setUser(prevState => ({...prevState, username: e.target.value}))}
-                required />
+                required/>
             <input
                 type="email"
                 className="font"
@@ -71,7 +79,7 @@ const RegisterForm = () => {
                 name="email"
                 id="email"
                 onChange={e => setUser(prevState => ({...prevState, email: e.target.value}))}
-                required />
+                required/>
             <input
                 type="phone-number"
                 className="font"
@@ -79,7 +87,7 @@ const RegisterForm = () => {
                 name="phone-number"
                 id="phone-number"
                 onChange={e => setUser(prevState => ({...prevState, phone: e.target.value}))}
-                required />
+                required/>
             <input
                 type="password"
                 className="font"
@@ -87,7 +95,7 @@ const RegisterForm = () => {
                 name="psw"
                 id="psw"
                 onChange={e => setUser(prevState => ({...prevState, password: e.target.value}))}
-                required />
+                required/>
             <input
                 type="password"
                 className="font"
@@ -99,13 +107,14 @@ const RegisterForm = () => {
 
             <div className="inline">
                 <p>Already have an account?</p>
-                <a className="underline" href="/login">Sign in</a>
+                <a className="underline" href="/src/src/pages/Login">Sign in</a>
             </div>
             <div className="col text-center">
-            <button
-                type="submit"
-                className="justify-content-center rounded-pill"
-                onClick={handleSubmit}>Sign Up</button>
+                <button
+                    type="submit"
+                    className="justify-content-center rounded-pill"
+                    onClick={handleSubmit}>Sign Up
+                </button>
             </div>
         </div>
     )

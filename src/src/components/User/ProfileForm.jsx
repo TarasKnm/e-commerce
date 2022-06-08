@@ -1,8 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import Product from '../images/product2.jpg'
+import Product from '../../images/product2.jpg'
 import {useNavigate} from "react-router-dom";
-import API from "../API";
-import '../css/profile.css'
+import API from "../../API";
+import '../../css/profile.css'
 
 const ProfileForm = () => {
     const jwt = localStorage.jwt

@@ -23,7 +23,7 @@ const API = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     }),
-    sendRegistrationRequest: (user) => axios.post('users/register', user, JSON_CONFIG),
+    sendRegistrationRequest:async (user) => await axios.post('users/register', user, JSON_CONFIG),
     getUserProfile: (jwt) => axios.get('users/profile', {
         headers: {
             Authorization: `Bearer ${jwt}`
@@ -49,8 +49,13 @@ const API = {
     ),
     getImageById: (id) => axiosInstance.get(`images/${id}`),
     getProductById: (id) => axiosInstance.get(`products/${id}`),
+    updateProduct: (product,id) => axiosInstance.put(`products/${id}`,product),
+    deleteProduct: (id) => axiosInstance.delete(`products/${id}`),
+    getAllProducts: () => axiosInstance('products'),
     getUserOrders: () => axiosInstance.get('orders/history/'),
-    createOrder: (order,product_id) => axiosInstance.post(`orders/${product_id}`,order)
+    createOrder: (order,product_id) => axiosInstance.post(`orders/${product_id}`,order),
+    deleteOrder: (order_id) => axiosInstance.delete(`orders/${order_id}`),
+    updateOrder: (order, id) => axiosInstance.put(`orders/${id}`,order)
 }
 
 export default API

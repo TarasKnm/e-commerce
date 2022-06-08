@@ -7,10 +7,16 @@
 
 .product-text {
   display: flex;
-  margin-top: 2em; }
+  margin-top: 2em;
+  overflow: auto;
+  justify-content: left;
+}
 
 .description-listing {
+  width: 75%;
+  display: flex;
   padding: 5em;
+  justify-content: space-between;
 }
 .description-listing p {
   margin-top: 4px;

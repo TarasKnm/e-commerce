@@ -1,16 +1,16 @@
 import React from 'react';
 import {useEffect, useState} from "react"
-import '../css/product.css'
-import API from "../API";
+import '../../css/product.css'
+import API from "../../API";
 import {useParams} from "react-router-dom";
-import Modal from '../components/Modal';
+import OrderCreateModal from '../Order/OrderCreateModal';
 
 const ProductForm = () => {
     const {id} = useParams()
     const [product, setProduct] = useState('')
     const [image, setImage] = useState(undefined)
     const [modalActive, setModalActive] = useState(false)
-    const images = require.context('../images', true)
+    const images = require.context('../../images', true)
 
     useEffect(() => {
         API.getProductById(id)
@@ -37,14 +37,14 @@ const ProductForm = () => {
                     {product?.name && product.name ? <h3 className="py-4">{product.name}</h3> : <h3>Test</h3>}
                     {product?.price && <h2>{product.price}$</h2>}
                     <h4 className="mt-5 mb-5">Product Details</h4>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi aperiam asperiores aspernatur atque ducimus est harum magni maiores nam natus non officia optio provident quam qui quis, repellendus soluta. </span>
+                    {product?.description &&<span>{product.description}</span>}
                 </div>
                 <div className="text-center">
                     <button
                         onClick={toggleModal}
                         className="buy-btn align-self-end btn btn-lg btn-primary">Buy
                     </button>
-                    {modalActive && <Modal product_id={id} visibility={modalActive} handleClose={toggleModal}
+                    {modalActive && <OrderCreateModal product_id={id} visibility={modalActive} handleClose={toggleModal}
                     />
 
                     }

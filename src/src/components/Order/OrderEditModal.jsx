@@ -1,33 +1,28 @@
 import React, {useState} from 'react';
-import API from "../API";
-import {useParams} from "react-router-dom";
-import "../css/modal.css"
+import API from "../../API";
+import "../../css/modal.css"
 
 
-const Modal = props => {
-    const [order, setOrder] = useState({
-        zip: '',
-        city: '',
-        street: '',
-    })
+const OrderEditModal = props => {
+    const [order, setOrder] = useState({...props.order})
     const handleSubmit = (event) => {
-        const obj = ({
-                zip: order.zip,
-                city: order.city,
-                address: order.street
-            }
-        )
-        if (!order.zip || !order.city || !order.street)
+        if (!order.zip || !order.city || !order.address)
         {
             alert('You have empty fields')
             return
         }
-        API.createOrder(obj, props.product_id)
+        if (order.zip === props.order.zip && order.city === props.order.city && order.address === props.order.address){
+            alert("You didn't change anything")
+            return;
+        }
+        API.updateOrder(order, order.id)
             .then(response => {
-                console.log(obj)
-                alert("Order was create successfully")
-                props.handleClose()
-            }).catch(err=>console.log(err))
+                window.location.reload(false);
+            }).catch(err=>
+        {
+
+            props.handleClose()
+        })
     }
 
     return (
@@ -49,28 +44,25 @@ const Modal = props => {
                     <div className="modal-body">
                         <form>
                             <div className="form-group">
-                                <label className="col-form-label">Enter info:</label>
+                                <label className="col-form-label">Edit order:</label>
                                 <input
                                     placeholder="Street"
                                     className="form-control mt-4"
-                                    onChange={e => setOrder(prevState => ({...prevState, street: e.target.value}))}
+                                    defaultValue={order?.address || ""}
+                                    onChange={e => setOrder(prevState => ({...prevState, address: e.target.value}))}
                                 />
                                 <input
                                     placeholder="City"
                                     className="form-control mt-4"
+                                    defaultValue={order?.city || ""}
                                     onChange={e => setOrder(prevState => ({...prevState, city: e.target.value}))}
                                 />
                                 <input
                                     placeholder="Zip"
                                     className="form-control mt-4"
+                                    defaultValue={order?.zip || ""}
                                     onChange={e => setOrder(prevState => ({...prevState, zip: e.target.value}))}
                                 />
-                                <input
-                                    placeholder="First name"
-                                    className="form-control mt-4"/>
-                                <input
-                                    placeholder="Last name"
-                                    className="form-control mt-4"/>
                             </div>
                         </form>
                     </div>
@@ -80,8 +72,9 @@ const Modal = props => {
                             className="btn btn-primary"
                             onClick={handleSubmit}
                         >
-                            Make Order
+                            Ok
                         </button>
+
                     </div>
                 </div>
             </div>
@@ -89,4 +82,4 @@ const Modal = props => {
     )
 };
 
-export default Modal;
+export default OrderEditModal;

@@ -20,7 +20,10 @@ const Navigation = () => {
                 {
                     isSuperUser === 'True' ?
                         <li><a className="text-decoration-none" href="/users">Users</a></li> : null
-
+                }
+                {
+                    isSuperUser === 'True' ?
+                        <li><a className="text-decoration-none" href="/products">Products</a></li> : null
                 }
                 <li><a className="text-decoration-none" href="/profile">Profile</a></li>
             </ul>

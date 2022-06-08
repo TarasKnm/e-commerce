@@ -7,7 +7,8 @@ import Users from "./pages/Users";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
 import History from "./pages/History";
-import ProductForm from "./components/ProductForm";
+import ProductForm from "./components/Product/ProductForm";
+import Products from "./pages/Products";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/users" element={<Users/>}/>
                     <Route path="/home" element={<Home />} />
                     <Route path="/history" element={<History/>}/>
+                    <Route path="/products" element={<Products />} />
                     <Route path="/product/:id" element={<ProductForm />}/>
                 </Routes>
             </Router>
