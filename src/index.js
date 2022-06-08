@@ -34,33 +34,36 @@ function sendRequest(method, url, jwt = null, body = null, login = false) {
 const requestURL = 'http://127.0.0.1:8000';
 
 const body = {
-    password: 'user1',
-    email: 'user1@gmail.com',
-    firstname: 'user1firstName',
-    lastname: 'user1lastName',
-    username: 'user1',
+    password: 'testspa',
+    email: 'testspa@gmail.com',
+    firstname: 'testspafirstName',
+    lastname: 'testspalastName',
+    username: 'testspa',
 };
 
 const login = {
-    username: 'user1',
-    password: 'user1',
+    username: 'testspa',
+    password: 'testspa',
 }
 
-sendRequest('POST', `${requestURL}/users/registration`, null, body)
+sendRequest('POST', `${requestURL}/users/register`, null, body)
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
 
-// sendRequest('POST', `${requestURL}/login/login/access-token`, null, login, true)
-//     .then((data) => localStorage.setItem('jwt', data['access_token']))
-//     .catch((err) => console.log(err));
+sendRequest('POST', `${requestURL}/login`, null, login, true)
+    .then((data) => {
+        console.log(data);
+        localStorage.setItem('jwt', data['access_token']);
+    })
+    .catch((err) => console.log(err));
 
 const jwt = localStorage.getItem('jwt')
 
-// sendRequest('GET', `${requestURL}/users/me`, jwt)
-//     .then((data) => console.log(data))
-//     .catch((err) => console.log(err));
+sendRequest('GET', `${requestURL}/users/profile`, jwt)
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
 
 
-// sendRequest('DELETE', `${requestURL}/users/me`, jwt)
-//     .then((data) => console.log(data))
-//     .catch((err) => console.log(err));
+sendRequest('DELETE', `${requestURL}/users`, jwt)
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
